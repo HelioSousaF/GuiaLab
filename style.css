@@ -1,0 +1,240 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* fonte base */
+body {
+  background-color: #f4f0ff; 
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4b2ca0;
+  min-height: 100vh;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* IMPORTANT: evita empurrar o nav para a direita */
+  gap: 36px;                   /* espaço entre logo e menu */
+  padding: 22px 80px;          /* controle da distância das laterais */ 
+}
+
+/* logo */
+header img {
+  height: 120px;                /* ajuste conforme sua imagem */
+  display: block;
+}
+
+/* menu ao lado do logo */
+nav {
+  display: flex;  
+  gap: 350px;
+  align-items: center;
+  margin-left: 40px;            /* pequeno espaçamento extra se precisar */
+}
+
+/* links do menu */
+nav a {
+  text-decoration: none;
+  color: #4b2ca0;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 0.2px;
+  transition: transform .12s ease, color .12s ease;
+}
+
+nav a:hover {
+  transform: translateY(-3px);
+  color: #7d5dfc;
+}
+
+/* ---------- SEÇÃO PRINCIPAL (conteúdo) ---------- */
+/* layout em duas colunas: texto (fixo) à esquerda + imagem à direita */
+section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 80px;
+  padding: 60px 80px 60px 50px;      /* controla a distância do topo e das laterais */
+  margin-top: 20px;
+}
+
+/* coluna do texto - fixa largura para parecer com a referência */
+section .texto {
+ flex: 0 0 420px;
+  text-align: left;
+
+  /* desloca visualmente todo o bloco de texto 80px para a direita
+     → altera apenas a posição visual, NÃO o fluxo/layout da página */
+  transform: translateX(80px);
+  transition: transform 0.28s ease;
+  will-change: transform;
+
+  /* z-index caso queira o texto sobreposto (opcional) */
+  position: relative;
+  z-index: 2;
+}
+
+/* título principal */
+section .texto h1 {
+  font-size: 96px;         /* grande como na referência */
+  line-height: 1.05;
+  color: #4b2ca0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  margin-top: -50px;
+
+  text-shadow: 2px 2px 6px rgba(75, 44, 160, 0.25); /* sombreado leve */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+}
+section .texto p {
+  font-size: 38px;
+  line-height: 1.4;
+  color: #5a45b5;
+  margin-top: 16px;   /* espaço entre o h1 e o p */
+  font-weight: 600;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.4s; /* entra depois do h1 */
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* coluna da imagem */
+section .imagem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* coloca a imagem mais para a esquerda dentro da coluna */
+  /* podemos simular o bloco claro atrás da imagem */
+  background: rgba(255,255,255,0.04);
+  padding: 28px;
+  border-radius: 4px;
+}
+
+/* imagem dos instrumentos (ajuste o width conforme necessário) */
+section .imagem img {
+  width: 1000px;            /* ajuste para encaixar como no original */
+  max-width: none;
+  display: block;
+  margin-left: 0px;
+  
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 0.6s; /* entra por último */
+  transition: transform 0.4s ease;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* efeito no hover da imagem */
+section .imagem img:hover {
+  transform: scale(1.03);} 
+
+/* ---------- RESPONSIVO (ajuste simples) ---------- */
+@media (max-width: 980px) {
+  header { padding: 16px 40px; gap: 20px; }
+  nav { gap: 22px; }
+  section { flex-direction: column; gap: 24px; padding: 40px 30px; text-align: center; }
+  section .texto { flex: none; max-width: 720px; }
+  section .texto h1 { font-size: 40px; }
+  section .imagem { justify-content: center; padding: 12px; }
+  section .imagem img { width: 90%; }
+}
+@media (max-width: 980px) {
+  section .texto {
+    transform: none;
+  }
+}
+
+/* ---------------------- */
+/* --- MODAL MELHORADO --- */
+/* ---------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  position: relative;
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+  animation: aparecer 0.35s ease;
+}
+
+.modal-content img {
+  width: 220px;
+  margin: 25px auto;
+  display: block;
+}
+
+.modal-content h2 {
+  color: #4b2ca0;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  color: #5a45b5;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* botão de fechar (X) */
+.fechar {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 32px;
+  cursor: pointer;
+  color: #4b2ca0;
+  transition: 0.2s;
+}
+
+.fechar:hover {
+  transform: scale(1.2);
+  color: #6c47ff;
+}
+
+/* animação do modal */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
