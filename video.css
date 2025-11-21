@@ -1,0 +1,213 @@
+/* ==================================== */
+/* ESTILOS DA PÁGINA VÍDEO (video.html) */
+/* ==================================== */
+
+/* 1. HEADER E NAV - MANTÉM O ESTILO PADRÃO DO SITE */
+/* Não sobrescreve o header para manter consistência */
+
+/* 2. LAYOUT GERAL E CENTRALIZAÇÃO */
+.video-page-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* 3. TÍTULOS E TEXTOS */
+.video-main-title {
+    text-align: center;
+    font-size: 72px; 
+    line-height: 1.1;
+    color: #4b2ca0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-top: 50px; 
+    opacity: 0;
+    animation: fadeIn 1s forwards ease-out;
+}
+
+.video-main-subtitle {
+    text-align: center;
+    font-size: 24px; 
+    color: #5a45b5;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s forwards ease-out 0.3s;
+}
+
+/* 4. CONTAINER DO VÍDEO */
+.video-container {
+    width: 100%;
+    padding-bottom: 56.25%; 
+    position: relative;
+    margin: 30px auto;
+    max-width: 800px; 
+    box-shadow: 0 10px 30px rgba(75, 44, 160, 0.2); 
+    border-radius: 12px;
+    overflow: hidden; 
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s forwards ease-out 0.6s;
+}
+
+.video-container:hover {
+    transform: scale(1.01);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 5. ESTILOS DA DESCRIÇÃO */
+.description-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 60px auto 40px auto;
+    text-align: left;
+    padding: 30px; 
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    animation: fadeIn 1s forwards ease-out 0.9s;
+}
+
+.description-title {
+    font-size: 30px; 
+    color: #4b2ca0;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.description-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #5a45b5;
+    font-weight: 400;
+}
+
+/* 6. ANIMAÇÃO GERAL */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================= */
+/* RESPONSIVO MOBILE - PÁGINA DE VÍDEO */
+/* ========================================= */
+
+/* Tablets (até 980px) */
+@media (max-width: 980px) {
+    .video-main-title {
+        font-size: 48px;
+        margin-top: 30px;
+    }
+    
+    .video-main-subtitle {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .video-container {
+        max-width: 95%;
+        margin: 20px auto;
+    }
+    
+    .description-container {
+        width: 95%;
+        padding: 25px;
+        margin: 40px auto 30px auto;
+    }
+    
+    .description-title {
+        font-size: 26px;
+    }
+    
+    .description-text {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+/* Mobile (até 600px) */
+@media (max-width: 600px) {
+    .video-main-title {
+        font-size: 36px;
+        margin-top: 20px;
+        line-height: 1.2;
+    }
+    
+    .video-main-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+        padding: 0 15px;
+    }
+    
+    .video-container {
+        width: 95%;
+        margin: 15px auto;
+        border-radius: 8px;
+    }
+    
+    .description-container {
+        width: 95%;
+        padding: 20px;
+        margin: 30px auto 20px auto;
+        border-radius: 6px;
+    }
+    
+    .description-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+    
+    .description-text {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+
+/* Mobile pequeno (até 400px) */
+@media (max-width: 400px) {
+    .video-main-title {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+    
+    .video-main-subtitle {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+    
+    .video-container {
+        width: 98%;
+        border-radius: 6px;
+    }
+    
+    .description-container {
+        width: 98%;
+        padding: 15px;
+    }
+    
+    .description-title {
+        font-size: 20px;
+    }
+    
+    .description-text {
+        font-size: 14px;
+    }
+}

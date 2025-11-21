@@ -1,0 +1,446 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- BASE ---------- */
+body {
+  background-color: #f4f0ff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4b2ca0;
+  overflow-x: hidden;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 20px 60px;
+}
+
+header img {
+  width: 130px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+nav {
+  display: flex;
+  gap: 200px;
+  align-items: center;
+  margin-left: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4b2ca0;
+  font-weight: 700;
+  font-size: 40px;
+  transition: transform .12s ease, color .12s ease;
+}
+
+nav a:hover {
+  transform: translateY(-3px);
+  color: #7d5dfc;
+}
+
+nav a.ativo {
+  color: #7d5dfc;
+}
+
+/* ---------- TÍTULOS ---------- */
+main {
+  padding: 40px 80px;
+}
+
+.titulo-principal {
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #4b2ca0;
+  text-align: center;
+  letter-spacing: -0.5px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(75, 44, 160, 0.25);
+  animation: fadeDown 1s ease forwards;
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 18px;
+  color: #5a45b5;
+  margin-bottom: 60px;
+  animation: fadeDown 1.2s ease forwards;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* ---------- CATÁLOGO ---------- */
+.catalogo {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f0eaff 0%, #f8f5ff 100%);
+  border-radius: 18px;
+  padding: 28px 36px;
+  box-shadow: 0 6px 18px rgba(75, 44, 160, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 26px rgba(75, 44, 160, 0.25);
+}
+
+.item img {
+  width: 160px;
+  margin-right: 40px;
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: rotate(-3deg) scale(1.1);
+}
+
+.item .info h2 {
+  font-size: 40px;
+  color: #4b2ca0;
+  margin-bottom: 12px;
+}
+
+.item .info p {
+  font-size: 24px;
+  color: #5a45b5;
+  line-height: 1.5;
+}
+
+/* ---------- MODAL ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.45);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } 
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: #ffffff;
+  color: #4b2ca0;
+  padding: 40px;
+  border-radius: 24px;
+  width: 85%;
+  max-width: 720px;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(75, 44, 160, 0.3);
+  position: relative;
+  transform: scale(0.9);
+  animation: zoomIn 0.3s ease forwards;
+}
+
+@keyframes zoomIn {
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content img {
+  width: 200px;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+.modal-content img:hover {
+  transform: scale(1.05);
+}
+
+.modal-content h2 {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.modal-content p {
+  font-size: 22px;
+  color: #5a45b5;
+  line-height: 1.6;
+}
+
+.fechar {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 38px;
+  cursor: pointer;
+  color: #7d5dfc;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.fechar:hover {
+  color: #4b2ca0;
+  transform: rotate(90deg);
+}
+
+/* ---------- ANIMAÇÕES ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================= */
+/* RESPONSIVO MOBILE - MELHORADO */
+/* ========================================= */
+
+/* Tablets (até 980px) */
+@media (max-width: 980px) {
+  header {
+    padding: 16px 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  header img {
+    width: 100px;
+  }
+  
+  nav { 
+    gap: 60px;
+    margin-left: 0;
+  }
+  
+  nav a { 
+    font-size: 28px; 
+  }
+
+  main {
+    padding: 30px 40px;
+  }
+
+  .titulo-principal { 
+    font-size: 48px;
+    margin-top: 30px;
+  }
+  
+  .subtitulo { 
+    font-size: 16px; 
+    margin-bottom: 40px; 
+  }
+
+  .catalogo {
+    gap: 40px;
+  }
+
+  .item {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 28px;
+  }
+
+  .item img {
+    margin: 0 0 20px 0;
+    width: 140px;
+  }
+
+  .item .info h2 {
+    font-size: 32px;
+  }
+
+  .item .info p {
+    font-size: 20px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .modal-content h2 {
+    font-size: 36px;
+  }
+
+  .modal-content p {
+    font-size: 20px;
+  }
+  
+  .modal-content img {
+    width: 160px;
+  }
+}
+
+/* Mobile (até 600px) */
+@media (max-width: 600px) {
+  header {
+    padding: 12px 15px;
+    gap: 15px;
+  }
+  
+  header img {
+    width: 80px;
+  }
+  
+  nav {
+    width: 100%;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    font-size: 20px;
+  }
+  
+  main {
+    padding: 20px 15px;
+  }
+  
+  .titulo-principal {
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .subtitulo {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .catalogo {
+    gap: 30px;
+  }
+  
+  .item {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .item img {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+  
+  .item .info h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  
+  .item .info p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  .modal-content {
+    width: 95%;
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+  
+  .modal-content img {
+    width: 140px;
+    margin: 15px 0;
+  }
+  
+  .modal-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-content p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .fechar {
+    top: 12px;
+    right: 18px;
+    font-size: 30px;
+  }
+}
+
+/* Mobile pequeno (até 400px) */
+@media (max-width: 400px) {
+  header {
+    padding: 10px;
+  }
+  
+  header img {
+    width: 70px;
+  }
+  
+  nav a {
+    font-size: 18px;
+    gap: 20px;
+  }
+  
+  .titulo-principal {
+    font-size: 30px;
+  }
+  
+  .subtitulo {
+    font-size: 14px;
+  }
+  
+  .item img {
+    width: 100px;
+  }
+  
+  .item .info h2 {
+    font-size: 22px;
+  }
+  
+  .item .info p {
+    font-size: 15px;
+  }
+  
+  .modal-content {
+    padding: 20px 15px;
+  }
+  
+  .modal-content img {
+    width: 120px;
+  }
+  
+  .modal-content h2 {
+    font-size: 24px;
+  }
+  
+  .modal-content p {
+    font-size: 15px;
+  }
+  
+  .fechar {
+    font-size: 26px;
+    top: 10px;
+    right: 15px;
+  }
+}

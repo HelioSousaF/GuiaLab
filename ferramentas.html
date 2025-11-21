@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas | GuiaLab</title>
+    <link rel="stylesheet" href="vidrarias.css">
+    <link rel="stylesheet" href="ferramentas.css"> 
+</head>
+
+<body>
+<header>
+  <a href="index.html">
+    <img src="imagens/logo.jpeg" alt="logo do site GuiaLab">
+    </a>
+    <nav>
+        <a href="vidrarias.html">Vidrarias🧪</a>
+        <a href="ferramentas.html" class="ativo">Ferramentas🔬</a>
+        <a href="video.html">Vídeo🎥</a>
+    </nav>
+</header>
+
+<main>
+    <h1 class="titulo-principal">Equipamentos e Utensílios de Laboratório</h1>
+    <p class="subtitulo">Clique em um item para saber mais sobre seu uso e cuidados.</p>
+
+    <section class="catalogo">
+
+        <div class="item" data-item="balanca">
+            <img src="imagens/balança_digital.png" alt="Balança Digital">
+            <div class="info">
+                <h2>Balança Digital</h2>
+                <p>Equipamento de precisão para pesagem de reagentes e amostras com exatidão.</p>
+            </div>
+        </div>
+
+        <div class="item" data-item="phmetro">
+            <img src="imagens/ph.png" alt="PHmetro de Bancada">
+            <div class="info">
+                <h2>PHmetro de Bancada</h2>
+                <p>Usado para medir o pH de soluções com alta precisão, crucial para reações químicas e biológicas.</p>
+            </div>
+        </div>
+
+        <div class="item" data-item="microscopio">
+            <img src="imagens/micro_digital.png" alt="Microscópio Digital">
+            <div class="info">
+                <h2>Microscópio Digital</h2>
+                <p>Permite a visualização e captura de imagens digitais de amostras em escala microscópica.</p>
+            </div>
+        </div>
+        
+        <div class="item" data-item="manta">
+            <img src="imagens/lembrei.png" alt="Manta Aquecedora">
+            <div class="info">
+                <h2>Manta Aquecedora</h2>
+                <p>Usada para aquecer balões e líquidos inflamáveis com segurança, sem chama direta.</p>
+            </div>
+        </div>
+        
+        <div class="item" data-item="estufa">
+            <img src="imagens/estufa.png" alt="Estufa">
+            <div class="info">
+                <h2>Estufa</h2>
+                <p>Equipamento usado para secagem de materiais e esterilização a temperaturas controladas.</p>
+            </div>
+        </div>
+        
+        <div class="item" data-item="banho-maria">
+            <img src="imagens/banho maria.png" alt="Banho-Maria">
+            <div class="info">
+                <h2>Banho-Maria</h2>
+                <p>Equipamento que mantém líquidos em temperatura constante por meio de aquecimento em água.</p>
+            </div>
+        </div>
+        
+        <div class="item" data-item="bomba">
+            <img src="imagens/bomba.png" alt="Bomba de Vácuo">
+            <div class="info">
+                <h2>Bomba de Vácuo</h2>
+                <p>Usada para reduzir a pressão em sistemas fechados, como em filtrações a vácuo e destilações.</p>
+            </div>
+        </div>
+        
+        <div class="item" data-item="microcentrifuga">
+            <img src="imagens/microcentrifuga.png" alt="Microcentrífuga">
+            <div class="info">
+                <h2>Microcentrífuga</h2>
+                <p>Equipamento que gira amostras rapidamente para separar componentes de misturas em pequenos volumes.</p>
+            </div>
+        </div>
+        
+        <div class="item" data-item="pipetador">
+            <img src="imagens/pipetador.png" alt="Pipetador">
+            <div class="info">
+                <h2>Pipetador</h2>
+                <p>Usado para encher pipetas por sucção com segurança, evitando contato direto com reagentes.</p>
+            </div>
+        </div>
+
+        <div class="item" data-item="filtro">
+            <img src="imagens/filtro de papel.png" alt="Filtro de Papel">
+            <div class="info">
+                <h2>Filtro de Papel</h2>
+                <p>Material consumível para separar sólidos de líquidos no processo de filtração.</p>
+            </div>
+        </div>
+        
+        <div class="item" data-item="papel-ph">
+            <img src="imagens/papel indicador de ph.png" alt="Papel Indicador de pH">
+            <div class="info">
+                <h2>Papel Indicador de pH</h2>
+                <p>Usado para determinar rapidamente o pH de uma solução (acidez ou basicidade) por mudança de cor.</p>
+            </div>
+        </div>
+        
+        <div class="item" data-item="caixa-crio">
+            <img src="imagens/caixa para tubo.png" alt="Caixa para Tubo Criogênico">
+            <div class="info">
+                <h2>Caixa para Tubo Criogênico</h2>
+                <p>Usado para organizar e armazenar tubos criogênicos em temperaturas muito baixas.</p>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="fechar">&times;</span>
+        <h2 id="modal-titulo"></h2>
+        <img id="modal-img" src="" alt="">
+        <p id="modal-texto"></p>
+    </div>
+</div>
+
+<script src="ferramentas.js"></script>

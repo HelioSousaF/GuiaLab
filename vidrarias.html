@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidrarias | GuiaLab</title>
+    <link rel="stylesheet" href="vidrarias.css">
+</head>
+
+<body>
+<header>
+  <a href="index.html">
+    <img src="imagens/logo.jpeg" alt="logo do site GuiaLab">
+    </a>
+    <nav>
+        <a href="vidrarias.html" class="ativo">Vidrarias🧪</a>
+        <a href="ferramentas.html">Ferramentas🔬</a>
+        <a href="video.html">Vídeo🎥</a>
+    </nav>
+</header>
+
+<main>
+    <h1 class="titulo-principal">Vidrarias de Laboratório</h1>
+    <p class="subtitulo">Clique em uma vidraria para saber mais sobre seu uso e cuidados.</p>
+
+    <section class="catalogo">
+
+        <!-- Cada item -->
+        <div class="item" data-item="destilacao">
+            <img src="imagens/balao_destilacao.png" alt="Balão de destilação">
+            <div class="info">
+                <h2>Balão de Destilação</h2>
+                <p>Usado para destilação e separação de líquidos por diferença de ponto de ebulição.</p>
+            </div>
+        </div>
+
+        <div class="item" data-item="fundo-redondo">
+            <img src="imagens/redondo.png" alt="Balão de fundo redondo">
+            <div class="info">
+                <h2>Balão de Fundo Redondo</h2>
+                <p>Usado para aquecer soluções com distribuição uniforme de calor.</p>
+            </div>
+        </div>
+
+        <div class="item" data-item="volumetrico">
+            <img src="imagens/volumetrico.png" alt="Balão volumétrico">
+            <div class="info">
+                <h2>Balão Volumétrico</h2>
+                <p>Usado para preparar soluções com volume exato e conhecido.</p>
+            </div>
+        </div>
+
+        <div class="item" data-item="bequer">
+            <img src="imagens/bequer.png" alt="Béquer">
+            <div class="info">
+                <h2>Béquer</h2>
+                <p>Serve para aquecer e misturar substâncias químicas.</p>
+            </div>
+        </div>
+
+        <div class="item" data-item="erlenmeyer">
+            <img src="imagens/erlen.png" alt="Erlenmeyer">
+            <div class="info">
+                <h2>Erlenmeyer</h2>
+                <p>Ideal para misturar soluções e realizar titulações com segurança.</p>
+            </div>
+        </div>
+
+        <div class="item" data-item="cubeta">
+  <img src="imagens/cubeta.png">
+  <div class="info">
+    <h2>Cubeta</h2>
+    <p>Usada em espectrofotometria para medir absorbância de soluções.</p>
+  </div>
+</div>
+
+<div class="item" data-item="dessecador">
+  <img src="imagens/esqueci.png">
+  <div class="info">
+    <h2>Dessecador</h2>
+    <p>Serve para armazenar substâncias e mantê-las livres de umidade.</p>
+  </div>
+</div>
+
+<div class="item" data-item="lamina">
+  <img src="imagens/lamina.png">
+  <div class="info">
+    <h2>Lâmina de Microscópio</h2>
+    <p>Base onde são colocadas amostras para observação no microscópio.</p>
+  </div>
+</div>
+
+<div class="item" data-item="microplaca">
+  <img src="imagens/micro.png">
+  <div class="info">
+    <h2>Microplaca</h2>
+    <p>Usada em experimentos de microescala e análises bioquímicas.</p>
+  </div>
+</div>
+
+<div class="item" data-item="perolas">
+  <img src="imagens/perolas.png">
+  <div class="info">
+    <h2>Pérolas de Vidro</h2>
+    <p>Empregadas para melhorar a agitação de líquidos em frascos e tubos.</p>
+  </div>
+</div>
+
+<div class="item" data-item="placa-cultivo">
+  <img src="imagens/celular.png">
+  <div class="info">
+    <h2>Placa de Cultivo Celular</h2>
+    <p>Usada para cultivar células em ambiente controlado de laboratório.</p>
+  </div>
+</div>
+
+<div class="item" data-item="placa-kline">
+  <img src="imagens/kn.png">
+  <div class="info">
+    <h2>Placa de Kline</h2>
+    <p>Utilizada em análises sorológicas e reações imunológicas.</p>
+  </div>
+</div>
+
+<div class="item" data-item="placa-petri">
+  <img src="imagens/dexter.png">
+  <div class="info">
+    <h2>Placa de Petri</h2>
+    <p>Usada para o cultivo de microrganismos em meio de cultura.</p>
+  </div>
+</div>
+
+<div class="item" data-item="vidro-relogio">
+  <img src="imagens/relogio.png">
+  <div class="info">
+    <h2>Vidro de Relógio</h2>
+    <p>Serve para evaporar líquidos e cobrir recipientes durante experimentos.</p>
+  </div>
+</div>
+    </section>
+</main>
+
+<!-- Modal (pop-up) -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="fechar">&times;</span>
+        <h2 id="modal-titulo"></h2>
+        <img id="modal-img" src="" alt="">
+        <p id="modal-texto"></p>
+    </div>
+</div>
+
+<script src="vidrarias.js"></script>
+</body>
+</html>
+
